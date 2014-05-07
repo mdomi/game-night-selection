@@ -47,6 +47,484 @@
             "cooperative" : false,
             "team" : false,
             "ffa" : true
+        },
+        {
+            "name" : "Cards Against Humanity",
+            "has" : ["Scott", "Jerry", "Brad"],
+            "players" : {
+                "min" : 3
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 30
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Castle Panic",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 1,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["co-op", "tower defense"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Cosmic Encounter",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 3,
+                "max" : 5
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["strategy"],
+            "cooperative" : false,
+            "team" : true,
+            "ffa" : true
+        },
+        {
+            "name" : "Dungeon Fighter",
+            "has" : ["Scott"],
+            "players" : {
+                "min" : 1,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["dice", "explore"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Elder Sign",
+            "has" : ["Brad", "Mike"],
+            "players" : {
+                "min" : 1,
+                "max" : 8
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["dice"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Firefly",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 1,
+                "max" : 4
+            },
+            "duration" : {
+                "hours" : 2,
+                "minutes" : 0
+            },
+            "genres" : ["dice", "explore", "mission"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Forbidden Island",
+            "has" : ["Brad", "Mike", "Jerry"],
+            "players" : {
+                "min" : 2,
+                "max" : 4
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 45
+            },
+            "genres" : ["survival"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Lords of Waterdeep",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 2,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["building", "d&d"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Monopoly",
+            "has" : ["Jerry"],
+            "players" : {
+                "min" : 2,
+                "max" : 8
+            },
+            "duration" : {
+                "hours" : 3,
+                "minutes" : 0
+            },
+            "genres" : ["classic"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Munchkin",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 3,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 30
+            },
+            "genres" : ["card", "roleplay"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Munchkin Bites",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 3,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 30
+            },
+            "genres" : ["card", "roleplay"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Munchkin Apocalypse",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 3,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 30
+            },
+            "genres" : ["card", "roleplay"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Pandemic",
+            "has" : ["Brad", "Mike", "Jerry"],
+            "players" : {
+                "min" : 2,
+                "max" : 4
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 15
+            },
+            "genres" : ["survival"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Phase 10",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 45
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Quirkle",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 4
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 30
+            },
+            "genres" : ["tiles"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Settlers of Catan",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 30
+            },
+            "genres" : ["area", "strategy", "building"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Shadows Over Camelot",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 3,
+                "max" : 7
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 30
+            },
+            "genres" : ["strategy", "survival", "roleplay"],
+            "cooperative" : true,
+            "team" : true,
+            "ffa" : false
+        },
+        {
+            "name" : "Skip Bo",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 20
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Small World",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 5
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 20
+            },
+            "genres" : ["strategy", "area", "dice"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Smash Up",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 4
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 45
+            },
+            "genres" : ["card", "area"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Takenoko",
+            "has" : ["Mike", "Brad"],
+            "players" : {
+                "min" : 2,
+                "max" : 4
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 45
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "The Resistance",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 5,
+                "max" : 10
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 30
+            },
+            "genres" : ["roleplay"],
+            "cooperative" : false,
+            "team" : true,
+            "ffa" : true
+        },
+        {
+            "name" : "Ticket to Ride",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 5
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["building", "card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Tsuro of the Seas",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 2,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 30
+            },
+            "genres" : ["tiles"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "UNO",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 10
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 30
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "We Didn't Playtest This at All",
+            "has" : ["Jerry"],
+            "players" : {
+                "min" : 2,
+                "max" : 10
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 10
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "We Didn't Playtest This Either",
+            "has" : ["Jerry"],
+            "players" : {
+                "min" : 2,
+                "max" : 10
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 10
+            },
+            "genres" : ["card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Wits & Wagers (Family)",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 5
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 20
+            },
+            "genres" : ["card", "trivia", "betting"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Zombicide",
+            "has" : ["Scott"],
+            "players" : {
+                "min" : 1,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["dice"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Zombie Dice",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 15
+            },
+            "genres" : ["dice"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
         }
     ]
 }
