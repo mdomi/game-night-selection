@@ -9,12 +9,26 @@ module.exports = function (grunt) {
                     port : 8338,
                     hostname : 'localhost',
                     open : true,
-                    keepalive : true
+                    livereload : true
+                }
+            }
+        },
+        watch : {
+            js : {
+                files : ['js/**/*.js'],
+                options : {
+                    livereload : true
+                }
+            },
+            html : {
+                files : ['index.html'],
+                options : {
+                    livereload : true
                 }
             }
         }
     });
 
-    grunt.registerTask('default', ['connect']);
+    grunt.registerTask('default', ['connect', 'watch']);
 
 };
