@@ -6,6 +6,11 @@
     </head>
     <body>
         <h1>Hello world!</h1>
+        <div data-ng-controller="GamesController">
+            <div data-ng-repeat="game in games">
+                <h2>{{ game.name }}</h2>
+            </div>
+        </div>
         <script src="bower_components/requirejs/require.js" data-main="js/main.js"></script>
     </body>
 </html>
