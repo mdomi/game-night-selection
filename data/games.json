@@ -1,0 +1,52 @@
+{
+    "games" : [
+        {
+            "name" : "Alhambra",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 6
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["building", "tile"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
+            "name" : "Arkham Horror",
+            "has" : ["Scott"],
+            "players" : {
+                "min" : 1,
+                "max" : 8
+            },
+            "duration" : {
+                "hours" : 4,
+                "minutes" : 0
+            },
+            "genres" : ["dice", "explore", "co-op"],
+            "cooperative" : true,
+            "team" : false,
+            "ffa" : false
+        },
+        {
+            "name" : "Carcosonne",
+            "has" : ["Mike"],
+            "players" : {
+                "min" : 2,
+                "max" : 5
+            },
+            "duration" : {
+                "hours" : 0,
+                "minutes" : 45
+            },
+            "genres" : ["building", "tile"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        }
+    ]
+}
