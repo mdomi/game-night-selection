@@ -4,6 +4,10 @@ require.config({
             '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min',
             '../bower_components/angular/angular.min'
         ],
+        'angular-resource' : [
+            '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min',
+            '../bower_components/angular-resource/angular-resource.min'
+        ],
         'text' : [
             '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.10/text',
             '../bower_components/requirejs-text/text'
@@ -17,6 +21,9 @@ require.config({
         'angular' : {
             exports : 'angular',
             deps : ['jquery']
+        },
+        'angular-resource' : {
+            deps : ['angular']
         }
     }
 });

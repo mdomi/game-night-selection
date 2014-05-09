@@ -7,7 +7,9 @@ define([
 ], function (games) {
 
     function GamesController($scope, GamesService) {
-        $scope.games = GamesService.getGames();
+        GamesService.getGames().then(function (games) {
+            $scope.games = games;
+        });
     }
 
     games.controller('GamesController', ['$scope', 'GamesService', GamesController]);
