@@ -17,7 +17,9 @@
                     <li data-ng-repeat="game in games" class="list-group-item">
                         <div class="media">
                             <div class="media-body">
-                                <h4 class="media-heading">{{ game.name }} ({{ game.players | playerRange }} players)</h4>
+                                <h4 class="media-heading">
+                                    <a ng-href="http://boardgamegeek.com/boardgame/{{ game.boardGameGeekId }}">{{ game.name }} ({{ game.players | playerRange }} players)</a>
+                                </h4>
                                 <p>Time required: {{ game.duration | duration }}</p>
                                 <p>{{ game.genres | join : ' / ' }}</p>
                             </div>
