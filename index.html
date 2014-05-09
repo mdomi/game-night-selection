@@ -16,6 +16,7 @@
                 <ul class="list-group">
                     <li data-ng-repeat="game in games" class="list-group-item">
                         <div class="media">
+                            <img class="media-object pull-left" ng-src="{{ game.bgg.thumbnail }}" alt="{{ game.name }}" style="width: 64px;">
                             <div class="media-body">
                                 <h4 class="media-heading">
                                     <a ng-href="http://boardgamegeek.com/boardgame/{{ game.boardGameGeekId }}">{{ game.name }} ({{ game.players | playerRange }} players)</a>

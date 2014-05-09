@@ -7,7 +7,8 @@ define([
     function GamesService($q, BoardGameGeekService) {
 
         function readGame(game) {
-            return BoardGameGeekService.getGame(game.boardGameGeekId).then(function () {
+            return BoardGameGeekService.getGame(game.boardGameGeekId).then(function (bggData) {
+                game.bgg = bggData;
                 return game;
             });
         }
