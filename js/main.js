@@ -21,31 +21,11 @@ require.config({
     }
 });
 
-require(['angular', 'text!../data/games.json'], function (angular, games) {
+require([
+    'angular',
+    'controllers/gamescontroller'
+], function (angular) {
     'use strict';
-
-    angular.module('games', [])
-        .filter('duration', [function () {
-            function pad(value) {
-                return value < 10 ? '0' + value : value;
-            }
-            return function (duration) {
-                return (duration.hours || 0) + ':' + pad(duration.minutes || 0);
-            };
-        }])
-        .filter('playerRange', [function () {
-            return function (players) {
-                return players.min + (players.max ? '-' + players.max : '+');
-            };
-        }])
-        .filter('join', [function () {
-            return function (values, joiner) {
-                return values.join(joiner);
-            };
-        }])
-        .controller('GamesController', ['$scope', function ($scope) {
-            $scope.games = JSON.parse(games).games;
-        }]);
     
     angular.element().ready(function () {
         angular.bootstrap(document, ['games']);
