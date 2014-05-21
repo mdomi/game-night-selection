@@ -9,7 +9,7 @@ html(lang="en")
         .container
             h1 Hampton ISS Game Night Selection
         .container
-            #sign-in
+            #sign-in.hide
                 span.g-signin(data-callback="signinCallback", data-clientid=clientId, data-cookiepolicy="single_host_origin" data-requestvisibleactions="http://schemas.google.com/AddActivity" data-scope="https://www.googleapis.com/auth/plus.login")
             button#sign-out.btn.btn-default.hide(type="button") Sign out
         .container(data-ng-controller="GamesController")
