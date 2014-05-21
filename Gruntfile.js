@@ -1,8 +1,6 @@
 module.exports = function (grunt) {
 
     var config = require('./config'),
-        CONNECT_PORT = config.grunt.connect.port,
-        CONNECT_HOSTNAME = config.grunt.connect.hostname,
         LIVERELOAD_PORT = config.grunt.livereload.port;
 
     require('load-grunt-tasks')(grunt);
@@ -25,24 +23,12 @@ module.exports = function (grunt) {
                         nodemon.on('log', function (event) {
                             console.log(event.colour);
                         });
-
                         nodemon.on('restart', function () {
                             setTimeout(function () {
                                 require('fs').writeFileSync('.rebooted', 'rebooted');
                             }, 1000);
                         });
                     }
-                }
-            }
-        },
-        connect : {
-            server : {
-                options : {
-                    base : './www',
-                    port : CONNECT_PORT,
-                    hostname : CONNECT_HOSTNAME,
-                    open : 'http://' + CONNECT_HOSTNAME + ':' + CONNECT_PORT + '/index.html',
-                    livereload : LIVERELOAD_PORT
                 }
             }
         },
@@ -68,6 +54,6 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['connect', 'watch']);
+    grunt.registerTask('default', ['concurrent']);
 
 };
