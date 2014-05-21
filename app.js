@@ -9,6 +9,11 @@ var config = require('./config');
 var app = express(),
     server = require('http').createServer(app);
 
+require('./routes')(app);
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
 app.use(connect.logger({
     stream : {
         write : function (message) {
@@ -22,6 +27,7 @@ if (config.grunt && config.grunt.livereload && config.grunt.livereload.port) {
         port : config.grunt.livereload.port
     }));
 }
+
 app.use(express.static(path.join(__dirname, 'www')));
 
 server.listen(config.server.port, function () {

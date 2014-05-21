@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Hampton ISS Game Night Selection
+        link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css")
+    body
+        .container
+            h1 Hampton ISS Game Night Selection
+        .container(data-ng-controller="GamesController")
+            .panel.panel-primary
+                .panel-heading
+                ul.list-group
+                    li.list-group-item(data-ng-repeat="game in games")
+                        .media
+                            img.media-object.pull-left(data-ng-src="{{ game.bgg.thumbnail }}", data-ng-attr-alt="{{ game.name }}", style="width: 64px;")
+                            .media-body
+                                h4.media-heading
+                                    a(data-ng-href="http://boardgamegeek.com/boardgame/{{ game.boardGameGeekId }}") {{ game.name }} ({{ game.players | playerRange }} players)
+                                p Time required: {{ game.duration | duration }}
+                                p {{ game.genres | join : ' / ' }}
+        script(src="bower_components/requirejs/require.js", data-main="js/main.js")
