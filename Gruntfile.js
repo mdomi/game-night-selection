@@ -9,6 +9,11 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
+        nodemon : {
+            dev : {
+                script : 'app.js'
+            }
+        },
         connect : {
             server : {
                 options : {

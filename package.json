@@ -2,14 +2,21 @@
   "name": "hampton-iss-game-night-selection",
   "version": "0.0.1",
   "private": true,
-  "scripts" : {
-    "start" : "node app.js"
+  "scripts": {
+    "start": "node app.js"
   },
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "https://github.com/mdomi/game-night-selection/blob/master/LICENSE"
+    }
+  ],
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-connect": "^0.7.1",
     "load-grunt-tasks": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.2.1"
   },
   "dependencies": {
     "express": "^4.3.0",
