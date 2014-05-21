@@ -9,9 +9,30 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
+        concurrent : {
+            dev : {
+                tasks : ['nodemon', 'watch'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
+        },
         nodemon : {
             dev : {
-                script : 'app.js'
+                script : 'app.js',
+                options : {
+                    callback : function (nodemon) {
+                        nodemon.on('log', function (event) {
+                            console.log(event.colour);
+                        });
+
+                        nodemon.on('restart', function () {
+                            setTimeout(function () {
+                                require('fs').writeFileSync('.rebooted', 'rebooted');
+                            }, 1000);
+                        });
+                    }
+                }
             }
         },
         connect : {
@@ -26,14 +47,20 @@ module.exports = function (grunt) {
             }
         },
         watch : {
+            server : {
+                files : ['.rebooted'],
+                options : {
+                    livereload : LIVERELOAD_PORT
+                }
+            },
             js : {
-                files : ['js/**/*.js', 'data/**/*.json'],
+                files : ['www/js/**/*.js', 'www/data/**/*.json'],
                 options : {
                     livereload : LIVERELOAD_PORT
                 }
             },
             html : {
-                files : ['index.html'],
+                files : ['www/index.html'],
                 options : {
                     livereload : LIVERELOAD_PORT
                 }
