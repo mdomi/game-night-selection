@@ -2,10 +2,6 @@ module.exports = function (grunt) {
 
     var config = require('./config');
 
-    var LIVE_RELOAD_PORT = 35729,
-        CONNECT_HOSTNAME = 'localhost',
-        CONNECT_PORT = 8338;
-
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
@@ -13,10 +9,10 @@ module.exports = function (grunt) {
             server : {
                 options : {
                     base : './www',
-                    port : CONNECT_PORT,
-                    hostname : CONNECT_HOSTNAME,
-                    open : 'http://' + CONNECT_HOSTNAME + ':' + CONNECT_PORT + '/index.html',
-                    livereload : LIVE_RELOAD_PORT
+                    port : config.grunt.connect.port,
+                    hostname : config.grunt.connect.hostname,
+                    open : 'http://' + config.grunt.connect.hostname + ':' + config.grunt.connect.port + '/index.html',
+                    livereload : config.grunt.livereload.port
                 }
             }
         },
@@ -24,13 +20,13 @@ module.exports = function (grunt) {
             js : {
                 files : ['js/**/*.js', 'data/**/*.json'],
                 options : {
-                    livereload : LIVE_RELOAD_PORT
+                    livereload : config.grunt.livereload.port
                 }
             },
             html : {
                 files : ['index.html'],
                 options : {
-                    livereload : LIVE_RELOAD_PORT
+                    livereload : config.grunt.livereload.port
                 }
             }
         }
