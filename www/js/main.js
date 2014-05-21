@@ -29,10 +29,29 @@ require.config({
 });
 
 require([
+    'jquery',
     'angular',
     'controllers/gamescontroller'
-], function (angular) {
+], function ($, angular) {
     'use strict';
+
+    $(function() {
+        var $signOut = $('#sign-out').on('click', function () {
+            window.gapi.auth.signOut();
+        });
+        window.signinCallback = function (result) {
+            if (result.status.signed_in) {
+                $signOut.removeClass('hide');
+                $('#sign-in').addClass('hide');
+            } else {
+                $signOut.addClass('hide');
+                $('#sign-in').removeClass('hide');
+            }
+        };
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    });
     
     angular.element().ready(function () {
         angular.bootstrap(document, ['games']);
