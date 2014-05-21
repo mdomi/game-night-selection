@@ -10,7 +10,7 @@ module.exports = {
             port : PORT
         },
         livereload : {
-            port : 35729
+            port : 35730
         }
     }
 };
