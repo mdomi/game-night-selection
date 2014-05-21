@@ -1,18 +1,22 @@
 module.exports = function (grunt) {
 
-    var config = require('./config');
+    var config = require('./config'),
+        CONNECT_PORT = config.grunt.connect.port,
+        CONNECT_HOSTNAME = config.grunt.connect.hostname,
+        LIVERELOAD_PORT = config.grunt.livereload.port;
 
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+        pkg : grunt.file.readJSON('package.json'),
         connect : {
             server : {
                 options : {
                     base : './www',
-                    port : config.grunt.connect.port,
-                    hostname : config.grunt.connect.hostname,
-                    open : 'http://' + config.grunt.connect.hostname + ':' + config.grunt.connect.port + '/index.html',
-                    livereload : config.grunt.livereload.port
+                    port : CONNECT_PORT,
+                    hostname : CONNECT_HOSTNAME,
+                    open : 'http://' + CONNECT_HOSTNAME + ':' + CONNECT_PORT + '/index.html',
+                    livereload : LIVERELOAD_PORT
                 }
             }
         },
@@ -20,13 +24,13 @@ module.exports = function (grunt) {
             js : {
                 files : ['js/**/*.js', 'data/**/*.json'],
                 options : {
-                    livereload : config.grunt.livereload.port
+                    livereload : LIVERELOAD_PORT
                 }
             },
             html : {
                 files : ['index.html'],
                 options : {
-                    livereload : config.grunt.livereload.port
+                    livereload : LIVERELOAD_PORT
                 }
             }
         }
