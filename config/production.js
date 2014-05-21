@@ -12,5 +12,10 @@ module.exports = {
         livereload : {
             port : 35730
         }
+    },
+    auth : {
+        google : {
+            clientId : process.env.GOOGLE_CLIENT_SECRET
+        }
     }
 };
