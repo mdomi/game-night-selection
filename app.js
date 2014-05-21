@@ -7,6 +7,7 @@ var config = require('./config');
 
 var app = express();
 
+app.use(express.logger());
 app.use(compress());
 app.use(express.static(path.join(__dirname, 'www')));
 
