@@ -1,15 +1,22 @@
 module.exports = function (grunt) {
 
+    var config = require('./config');
+
+    var LIVE_RELOAD_PORT = 35729,
+        CONNECT_HOSTNAME = 'localhost',
+        CONNECT_PORT = 8338;
+
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
         connect : {
             server : {
                 options : {
-                    port : 8338,
-                    hostname : 'localhost',
-                    open : true,
-                    livereload : true
+                    base : './www',
+                    port : CONNECT_PORT,
+                    hostname : CONNECT_HOSTNAME,
+                    open : 'http://' + CONNECT_HOSTNAME + ':' + CONNECT_PORT + '/index.html',
+                    livereload : LIVE_RELOAD_PORT
                 }
             }
         },
@@ -17,13 +24,13 @@ module.exports = function (grunt) {
             js : {
                 files : ['js/**/*.js', 'data/**/*.json'],
                 options : {
-                    livereload : true
+                    livereload : LIVE_RELOAD_PORT
                 }
             },
             html : {
                 files : ['index.html'],
                 options : {
-                    livereload : true
+                    livereload : LIVE_RELOAD_PORT
                 }
             }
         }
