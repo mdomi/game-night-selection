@@ -8,6 +8,7 @@ var ERROR_TEMPLATE = 'No config matching NODE_ENV=%s. Requires "%s.js"',
 
 try {
     config = require(configFile);
+    config.NODE_ENV = env;
 } catch (error) {
     if (error.code && error.code === 'MODULE_NOT_FOUND') {
         console.error(util.format(ERROR_TEMPLATE, env, path.join(__dirname, env)));
