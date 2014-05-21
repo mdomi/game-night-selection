@@ -1,4 +1,4 @@
-var PORT = 80;
+var PORT = 8993;
 
 module.exports = {
     server : {
