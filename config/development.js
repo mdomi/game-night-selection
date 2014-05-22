@@ -1,6 +1,6 @@
 var PORT = 8338;
 
-module.exports = {
+var config = {
     server : {
         port : PORT
     },
@@ -14,3 +14,9 @@ module.exports = {
         }
     }
 };
+
+try {
+    config.auth = require('./auth.json');
+} catch (error) {}
+
+module.exports = config;

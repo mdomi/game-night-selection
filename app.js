@@ -22,6 +22,7 @@ app.use(connect.logger({
         }
     }
 }));
+
 app.use(require('compression')());
 if (config.grunt && config.grunt.livereload && config.grunt.livereload.port) {
     logger.log('info', 'Injecting livereload middleware for port %s', config.grunt.livereload.port);

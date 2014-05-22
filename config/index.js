@@ -18,8 +18,4 @@ try {
     }
 }
 
-try {
-    config.auth = require('./auth.json');
-} catch (error) {}
-
 module.exports = config;
