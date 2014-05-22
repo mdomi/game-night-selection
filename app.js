@@ -9,9 +9,9 @@ var config = require('./config');
 var app = express(),
     server = require('http').createServer(app);
 
-require('./routes')(app);
+require('./app/routes')(app);
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
 
 app.use(connect.logger({
@@ -28,7 +28,7 @@ if (config.grunt && config.grunt.livereload && config.grunt.livereload.port) {
     }));
 }
 
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 server.listen(config.server.port, function () {
     logger.log('info', 'Listening at http://localhost:%s', config.server.port);

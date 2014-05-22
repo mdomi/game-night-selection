@@ -30,13 +30,13 @@ module.exports = function (grunt) {
                 livereload : LIVERELOAD_PORT
             },
             jade : {
-                files : ['views/**'],
+                files : ['app/views/**'],
                 options : {
                     livereload : LIVERELOAD_PORT
                 }
             },
             js : {
-                files : ['www/js/**/*.js', 'www/data/**/*.json'],
+                files : ['public/js/**', 'public/data/**', 'app/**/*.js'],
                 options : {
                     livereload : LIVERELOAD_PORT
                 }
