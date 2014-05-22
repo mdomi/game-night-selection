@@ -15,6 +15,14 @@ module.exports = function (grunt) {
                 }
             }
         },
+        jshint : {
+            all : {
+                src : [ 'Gruntfile.js', 'public/js/**/*.js', 'app/**/*/js'],
+                options : {
+                    jshintrc : true
+                }
+            }
+        },
         nodemon : {
             dev : {
                 script : 'app.js',
@@ -37,6 +45,7 @@ module.exports = function (grunt) {
             },
             js : {
                 files : ['public/js/**', 'public/data/**', 'app/**/*.js'],
+                tasks : ['jshint'],
                 options : {
                     livereload : LIVERELOAD_PORT
                 }

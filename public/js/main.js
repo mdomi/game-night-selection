@@ -15,6 +15,9 @@ require.config({
         'jquery' : [
             '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
             '../bower_components/jquery/dist/jquery.min'
+        ],
+        'google.signin' : [
+            'https://apis.google.com/js/client:plusone'
         ]
     },
     shim : {
@@ -40,9 +43,10 @@ require([
             window.gapi.auth.signOut();
         });
         window.signinCallback = function (result) {
+            window.console.log(result);
             if (result) {
                 if (result.status.signed_in) {
-                    $signOut.removeClass('hide');
+                    // $signOut.removeClass('hide');
                     $('#sign-in').addClass('hide');
                 } else {
                     $signOut.addClass('hide');
@@ -50,9 +54,7 @@ require([
                 }
             }
         };
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/client:plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        require(['google.signin']);
     });
     
     angular.element().ready(function () {
