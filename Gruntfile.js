@@ -19,22 +19,18 @@ module.exports = function (grunt) {
             dev : {
                 script : 'app.js',
                 options : {
-                    callback : function (nodemon) {
-                        nodemon.on('log', function (event) {
-                            console.log(event.colour);
-                        });
-                        nodemon.on('restart', function () {
-                            setTimeout(function () {
-                                require('fs').writeFileSync('.rebooted', 'rebooted');
-                            }, 1000);
-                        });
-                    }
+                    ignoredFiles: ['README.md', 'node_modules/**', '.DS_Store'],
+                    watchedExtensions : ['js', 'json', 'jade'],
+                    watchedFolders : ['config', 'routes', 'views']
                 }
             }
         },
         watch : {
-            server : {
-                files : ['.rebooted'],
+            options : {
+                livereload : LIVERELOAD_PORT
+            },
+            jade : {
+                files : ['views/**'],
                 options : {
                     livereload : LIVERELOAD_PORT
                 }
@@ -44,15 +40,11 @@ module.exports = function (grunt) {
                 options : {
                     livereload : LIVERELOAD_PORT
                 }
-            },
-            html : {
-                files : ['www/index.html'],
-                options : {
-                    livereload : LIVERELOAD_PORT
-                }
             }
         }
     });
+
+    grunt.option('force', true);
 
     grunt.registerTask('default', ['concurrent']);
 

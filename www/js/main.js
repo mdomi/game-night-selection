@@ -40,12 +40,14 @@ require([
             window.gapi.auth.signOut();
         });
         window.signinCallback = function (result) {
-            if (result.status.signed_in) {
-                $signOut.removeClass('hide');
-                $('#sign-in').addClass('hide');
-            } else {
-                $signOut.addClass('hide');
-                $('#sign-in').removeClass('hide');
+            if (result) {
+                if (result.status.signed_in) {
+                    $signOut.removeClass('hide');
+                    $('#sign-in').addClass('hide');
+                } else {
+                    $signOut.addClass('hide');
+                    $('#sign-in').removeClass('hide');
+                }
             }
         };
         var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
