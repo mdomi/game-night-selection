@@ -18,8 +18,12 @@ html(lang="en")
                 span.g-signin()
             button#sign-out.btn.btn-default.hide(type="button") Sign out
         .container(data-ng-controller="GamesController")
+            .panel.panel-primary(data-ng-show="events.length > 0")
+                .panel-heading Events
+                ul.list-group
+                    li.list-group-item(data-ng-repeat="event in events") {{ event.date | date:'short' }}
             .panel.panel-primary
-                .panel-heading
+                .panel-heading Games
                 ul.list-group
                     li.list-group-item(data-ng-repeat="game in games")
                         .media
