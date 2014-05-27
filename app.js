@@ -2,6 +2,7 @@ var path = require('path');
 
 var express = require('express'),
     connect = require('connect'),
+    passport = require('passport'),
     logger = require('winston');
 
 var config = require('./config');
@@ -32,6 +33,11 @@ if (config.grunt && config.grunt.livereload && config.grunt.livereload.port) {
 }
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('cookie-parser')());
+app.use(require('body-parser')());
+app.use(require('express-session')({ secret : config.session.secret }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./app/routes')(app);
 

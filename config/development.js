@@ -1,8 +1,18 @@
-var PORT = 8338;
+var HOSTNAME = 'localhost',
+    PORT = 8338;
 
 var config = {
     server : {
         port : PORT
+    },
+    passport : {
+        google : {
+            returnURL : 'http://' + HOSTNAME + ':' + PORT + '/auth/google/return',
+            realm : 'http://' + HOSTNAME + ':' + PORT + '/',
+        }
+    },
+    session : {
+        secret : 'game-night-selection'
     },
     grunt : {
         connect : {
