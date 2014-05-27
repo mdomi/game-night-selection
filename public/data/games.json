@@ -442,6 +442,23 @@
             "ffa" : true
         },
         {
+            "boardGameGeekId" : "14996",
+            "name" : "Ticket to Ride: Europe",
+            "has" : ["Brad"],
+            "players" : {
+                "min" : 2,
+                "max" : 5
+            },
+            "duration" : {
+                "hours" : 1,
+                "minutes" : 0
+            },
+            "genres" : ["building", "card"],
+            "cooperative" : false,
+            "team" : false,
+            "ffa" : true
+        },
+        {
             "boardGameGeekId" : "124172",
             "name" : "Tsuro of the Seas",
             "has" : ["Brad"],
