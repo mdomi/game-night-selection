@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Hampton ISS Game Night Selection
+        meta(name="google-signin-clientid" content=clientId)
+        meta(name="google-signin-cookiepolicy" content="single_host_origin")
+        meta(name="google-signin-callback" content="signinCallback")
+        meta(name="google-signin-requestvisibleactions" content="https://schemas.google.com/AddActivity")
+        meta(name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login")
+        link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css")
+    body
+        .container
+            h1 Login
+            a(href="/auth/google") Sign In With Google

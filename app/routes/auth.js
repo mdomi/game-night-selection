@@ -42,6 +42,11 @@ passport.deserializeUser(function (id, done) {
 });
 
 module.exports = function (app) {
+    logger.debug('Setting up login route');
+    app.get('/login', function (req, res) {
+        res.render('login');
+    });
+
     logger.debug('Setting up Google authorization route');
     app.get('/auth/google', passport.authenticate('google', {
         scope : 'openid'
@@ -49,9 +54,11 @@ module.exports = function (app) {
 
     logger.debug('Setting up Google authorization return route');
     app.get('/auth/google/return', passport.authenticate('google', {
-        successRedirect : '/',
         failureRedirect : '/auth/google'
-    }));
+    }), function (req, res) {
+        logger.debug('Authentication complete, isAuthenticated = %s', req.isAuthenticated());
+        res.redirect('/');
+    });
 
     logger.info('auth routes setup complete');
 };
