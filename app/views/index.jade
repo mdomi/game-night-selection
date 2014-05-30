@@ -26,10 +26,10 @@ html(lang="en")
                 .panel-heading Games
                 ul.list-group
                     li.list-group-item
-                        form(role="form")
+                        form.form-horizontal(role="form")
                             .form-group
-                                label Owned By:
-                                div
+                                label.col-xs-12 Owned By:
+                                div.col-xs-12
                                     label.checkbox-inline(data-ng-repeat="owner in potentialOwners")
                                         input(type="checkbox", data-ng-model="ownerFilter[owner]")
                                         {{ owner }}
