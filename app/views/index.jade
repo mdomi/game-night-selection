@@ -25,6 +25,14 @@ html(lang="en")
             .panel.panel-primary
                 .panel-heading Games
                 ul.list-group
+                    li.list-group-item
+                        form(role="form")
+                            .form-group
+                                label Owned By:
+                                div
+                                    label.checkbox-inline(data-ng-repeat="owner in potentialOwners")
+                                        input(type="checkbox", data-ng-model="ownerFilter[owner]")
+                                        {{ owner }}
                     li.list-group-item(data-ng-repeat="game in games | ownedBy : owners")
                         .media
                             img.media-object.pull-left(data-ng-src="{{ game.bgg.thumbnail }}", data-ng-attr-alt="{{ game.name }}", style="width: 64px;")
