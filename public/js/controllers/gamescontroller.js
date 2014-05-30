@@ -5,6 +5,7 @@ define([
     'services/gamesservice',
     'services/eventsservice',
     'filters/playerrange',
+    'filters/canplaywith',
     'filters/ownedby',
     'filters/duration',
     'filters/join'
@@ -16,6 +17,7 @@ define([
         });
         $scope.events = EventsService.listEvents();
         $scope.potentialOwners = ['Mike', 'Scott', 'Brad', 'Jerry'];
+        $scope.playerCount = 4;
 
         $scope.ownerFilter = $scope.potentialOwners.reduce(function (filter, owner) {
             filter[owner] = true;
