@@ -1,5 +1,5 @@
 var HOSTNAME = 'localhost',
-    PORT = 8338;
+    PORT = 8993;
 
 var config = {
     server : {

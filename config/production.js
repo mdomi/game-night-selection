@@ -7,8 +7,8 @@ module.exports = {
     },
     passport : {
         google : {
-            returnURL : 'http://' + HOSTNAME + ':' + PORT + '/auth/google/return',
-            realm : 'http://' + HOSTNAME + ':' + PORT + '/',
+            returnURL : 'http://' + HOSTNAME + '/auth/google/return',
+            realm : 'http://' + HOSTNAME + '/',
         }
     },
     session : {
