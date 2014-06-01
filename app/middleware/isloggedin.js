@@ -1,9 +1,9 @@
 var logger = require('winston').loggers.get('middleware.isloggedin');
 
+var conf = require('../../config');
+
 module.exports = function (req, res, next) {
     var isAuthenticated = req.isAuthenticated();
-
-    console.log(req.session);
 
     logger.debug('isAuthenticated = %s', isAuthenticated);
 
@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
         logger.debug('Continuing to next middleware handler');
         next();
     } else {
-        logger.debug('Redirecting to login');
-        res.redirect('/login');
+        logger.debug('Redirecting to login url %s', conf.passport.loginUrl);
+        res.redirect(conf.passport.loginUrl);
     }
 };

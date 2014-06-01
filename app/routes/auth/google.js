@@ -2,8 +2,8 @@ var logger = require('winston').loggers.get('routes.auth'),
     passport = require('passport'),
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-var conf = require('../../config'),
-    UsersService = require('../services/users'),
+var conf = require('../../../config'),
+    UsersService = require('../../services/users'),
     users = new UsersService();
 
 passport.use(new GoogleStrategy({
@@ -16,7 +16,7 @@ passport.use(new GoogleStrategy({
             logger.error('Unable to retrieve user: %s', err);
             done(err);
         } else {
-            logger.debug('Found user %s', JSON.stringify(user));
+            logger.debug('Found user %s', user.googleId);
             done(null, user);
         }
     });
@@ -42,11 +42,6 @@ passport.deserializeUser(function (id, done) {
 });
 
 module.exports = function (app) {
-    logger.debug('Setting up login route');
-    app.get('/login', function (req, res) {
-        res.render('login');
-    });
-
     logger.debug('Setting up Google authorization route');
     app.get('/auth/google', passport.authenticate('google', {
         scope : 'openid'

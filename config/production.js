@@ -9,7 +9,9 @@ module.exports = {
         google : {
             returnURL : 'http://' + HOSTNAME + '/auth/google/return',
             realm : 'http://' + HOSTNAME + '/',
-        }
+        },
+        method : 'google',
+        loginUrl : '/login'
     },
     session : {
         secret : 'game-night-selection'

@@ -9,7 +9,9 @@ var config = {
         google : {
             returnURL : 'http://' + HOSTNAME + ':' + PORT + '/auth/google/return',
             realm : 'http://' + HOSTNAME + ':' + PORT + '/',
-        }
+        },
+        method : 'google',
+        loginUrl : '/login'
     },
     session : {
         secret : 'game-night-selection'

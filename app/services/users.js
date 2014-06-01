@@ -23,12 +23,12 @@ function UserNotFoundError(query) {
 }
 
 UsersService.prototype.find = function (query, cb) {
-    logger.debug('UsersService find(%s)', JSON.stringify(query));
+    logger.debug('UsersService find(%s)', JSON.stringify(_.pick(query, 'googleId')));
     var service = this;
     process.nextTick(function () {
-        var user = _.findWhere(service.users);
+        var user = _.findWhere(service.users, { googleId : query.googleId });
         if (user) {
-            logger.debug('UsersService find() user = ', JSON.stringify(user));
+            logger.debug('UsersService find() found user %s', user.googleId);
             cb(null, user);
         } else {
             logger.debug('UsersService find() user not found');
