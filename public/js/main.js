@@ -1,5 +1,8 @@
 require.config({
     paths : {
+        'underscore' : [
+            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
+        ],
         'angular' : [
             '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min',
             '../bower_components/angular/angular.min'

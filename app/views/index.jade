@@ -25,7 +25,23 @@ html(lang="en")
             .panel.panel-primary
                 .panel-heading Games
                 ul.list-group
-                    li.list-group-item(data-ng-repeat="game in games")
+                    li.list-group-item
+                        form(role="form")
+                            .row
+                                .col-xs-12.col-sm-6.col-md-4
+                                    .form-group
+                                        label Owned By:
+                                        div
+                                            label.checkbox-inline(data-ng-repeat="owner in potentialOwners")
+                                                input(type="checkbox", data-ng-model="ownerFilter[owner]")
+                                                {{ owner }}
+                                .col-xs-12.col-sm-6.col-md-4
+                                    .form-group
+                                        label Players:
+                                        .row
+                                            .col-xs-6.col-sm-6
+                                                input.form-control(type="number", min="1", max="5", data-ng-model="playerCount")
+                    li.list-group-item(data-ng-repeat="game in games | ownedBy : owners | canPlayWith : playerCount")
                         .media
                             img.media-object.pull-left(data-ng-src="{{ game.bgg.thumbnail }}", data-ng-attr-alt="{{ game.name }}", style="width: 64px;")
                             .media-body
