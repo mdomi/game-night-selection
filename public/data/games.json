@@ -36,7 +36,7 @@
         },
         {
             "boardGameGeekId" : "822",
-            "name" : "Carcosonne",
+            "name" : "Carcassonne",
             "has" : ["Mike"],
             "players" : {
                 "min" : 2,
