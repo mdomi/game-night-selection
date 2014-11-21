@@ -1,5 +1,8 @@
 require.config({
     paths : {
+        'underscore' : [
+            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
+        ],
         'angular' : [
             '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min',
             '../bower_components/angular/angular.min'
@@ -15,6 +18,9 @@ require.config({
         'jquery' : [
             '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
             '../bower_components/jquery/dist/jquery.min'
+        ],
+        'google.signin' : [
+            'https://apis.google.com/js/client:plusone'
         ]
     },
     shim : {
@@ -29,10 +35,30 @@ require.config({
 });
 
 require([
+    'jquery',
     'angular',
     'controllers/gamescontroller'
-], function (angular) {
+], function ($, angular) {
     'use strict';
+
+    $(function() {
+        var $signOut = $('#sign-out').on('click', function () {
+            window.gapi.auth.signOut();
+        });
+        window.signinCallback = function (result) {
+            window.console.log(result);
+            if (result) {
+                if (result.status.signed_in) {
+                    // $signOut.removeClass('hide');
+                    $('#sign-in').addClass('hide');
+                } else {
+                    $signOut.addClass('hide');
+                    $('#sign-in').removeClass('hide');
+                }
+            }
+        };
+        require(['google.signin']);
+    });
     
     angular.element().ready(function () {
         angular.bootstrap(document, ['games']);
